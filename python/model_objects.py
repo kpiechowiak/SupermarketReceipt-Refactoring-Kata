@@ -24,6 +24,7 @@ class SpecialOfferType(Enum):
     TWO_FOR_AMOUNT = 3
     FIVE_FOR_AMOUNT = 4
 
+
 class Offer:
     def __init__(self, offer_type, product, argument):
         self.offer_type = offer_type
@@ -36,3 +37,20 @@ class Discount:
         self.product = product
         self.description = description
         self.discount_amount = discount_amount
+
+
+class Bundle:
+    def __init__(self, products, discount_percentage):
+        self.products = products
+        self.discount_percentage = discount_percentage
+
+
+class Coupon:
+    def __init__(self, product, buy_quantity, discounted_quantity, discount_percentage, date_start, date_end):
+        self.product = product
+        self.buy_quantity = buy_quantity
+        self.discounted_quantity = discounted_quantity
+        self.discount_percentage = discount_percentage
+        self.date_start = date_start
+        self.date_end = date_end
+        self.used = False

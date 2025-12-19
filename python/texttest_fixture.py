@@ -61,7 +61,7 @@ def main(args):
     teller = Teller(catalog)
     read_offers(Path("offers.csv"), teller)
     basket = read_basket(Path("cart.csv"), catalog)
-    receipt = teller.checks_out_articles_from(basket)
+    receipt = teller.checkout_cart(basket)
     print(ReceiptPrinter().print_receipt(receipt))
 
 
